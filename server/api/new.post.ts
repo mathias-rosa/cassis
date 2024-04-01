@@ -14,9 +14,20 @@ const shorten = (num : number) => {
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
+
+    const formatURL = (url : string) => {
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            return "http://" + url
+        }
+        return url
+    }
+
     try {
 
-        body.url = body.url.lowerCase()
+        console.log(formatURL(body.url))
+
+
+        body.url = formatURL(body.url.toLowerCase())
 
 
         // Vérification des données
@@ -39,6 +50,8 @@ export default defineEventHandler(async (event) => {
             }
         }
         // Sinon, on crée un nouveau lien
+
+
 
         const date = new Date()
         const entry = await new LinkShema({

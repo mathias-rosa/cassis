@@ -41,6 +41,7 @@ const link = ref({
 })
 
 async function createLink() {
+    console.log(link.value.url)
     if (!link.value.url) return
     const ret = $fetch('/api/new', {
         method: 'POST',

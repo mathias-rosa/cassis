@@ -19,10 +19,5 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-
-    if (!link.url.toString().startsWith('http')) {
-        return sendRedirect(event, `http://${link.url}`)
-    }
-
     return sendRedirect(event, `${link.url}`)
 })
