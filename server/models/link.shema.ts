@@ -3,10 +3,6 @@ import { defineMongooseModel } from '#nuxt/mongoose';
 export const LinkShema = defineMongooseModel({
     name: 'link',
     schema: {
-        name: {
-            type: String,
-            required: true
-        },
         url: {
             type: String,
             required: true

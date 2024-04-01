@@ -25,12 +25,6 @@ export default defineEventHandler(async (event) => {
             })
         }
 
-        if (!body.name) {
-            throw createError({
-                statusCode: 400,
-                statusMessage: 'Nom manquant'
-            })
-        }
         
 
         // Si le lien existe déjà, on le retourne
@@ -47,7 +41,6 @@ export default defineEventHandler(async (event) => {
 
         const date = new Date()
         const entry = await new LinkShema({
-            name : body.name,
             url:  encodeURI(body.url),
             uid: shorten(date.getTime()),
             createdAt: date,

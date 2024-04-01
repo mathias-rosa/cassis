@@ -10,6 +10,10 @@
             </div>
         </div>
         
-        <NuxtPage class="relative flex flex-col bg-card -top-6 px-5 py-3 rounded-xl w-11/12 shadow-accent" />
+        <div class="relative flex flex-col bg-card -top-6 px-5 py-3 rounded-xl w-11/12 shadow-accent">
+            <CardHeader />
+            <NuxtPage  />
+        </div>
     </div> 
 </template>
+

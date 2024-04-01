@@ -1,11 +1,5 @@
 <template>
     <div>
-        <CardHeader>
-            <MenuItem>
-                <LockIcon></LockIcon>
-                Se connecter
-            </MenuItem>
-        </CardHeader>
         <div class="flex justify-between py-3 gap-4">
             <div class="flex flex-col gap-2">
                 <h2 class="text-accent text-lg">Veuillez vous connecter pour commencer</h2>
