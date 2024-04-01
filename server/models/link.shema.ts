@@ -22,6 +22,14 @@ export const LinkShema = defineMongooseModel({
         createdBy: {
             type: String,
             required: true
+        },
+        expiresAt: {
+            type: Date ,
+            required: false
+        },
+        visited: {
+            type: Number,
+            required: true
         }
     }
 

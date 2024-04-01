@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-feather-icons',
   ],
-  css: ['~/assets/css/main.css'],
   mongoose: {
     uri: process.env.MONGODB_URI,
     options: {},
@@ -18,6 +17,7 @@ export default defineNuxtConfig({
       Inter : true
     }
   },
+  css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
       tailwindcss: {},
