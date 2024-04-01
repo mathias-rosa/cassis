@@ -16,6 +16,9 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     try {
 
+        body.url = body.url.lowerCase()
+
+
         // Vérification des données
 
         if (!body.url) {
@@ -24,9 +27,7 @@ export default defineEventHandler(async (event) => {
                 statusMessage: 'Url manquante'
             })
         }
-
         
-
         // Si le lien existe déjà, on le retourne
 
         const link = await LinkShema.findOne({

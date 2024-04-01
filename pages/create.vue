@@ -6,7 +6,7 @@
                     <UsersIcon size="1.5x" />
                     Destinataires
                 </div>
-                <div class="flex w-fit gap-3 py-2 px-3 rounded-md text-sm bg-background text-foreground">
+                <div class="flex w-fit gap-3 py-2 px-3 rounded-md text-sm bg-background text-foreground cursor-not-allowed">
                     Tous
                 </div>
                 <span class="self-center">&middot;</span>
@@ -16,7 +16,7 @@
                     <ClockIcon size="1.5x" />
                     Expiration
                 </div>
-                <div class="flex w-fit gap-3 py-2 px-3 rounded-md text-sm bg-background text-foreground">
+                <div class="flex w-fit gap-3 py-2 px-3 rounded-md text-sm bg-background text-foreground cursor-not-allowed">
                     Jamais
                 </div>
             </div>
