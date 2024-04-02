@@ -6,7 +6,7 @@
                 <p class="text-sm max-w-3xl">
                     Seuls les utilisateurs connectés peuvent créer des liens. Afin de pouvoir utiliser le service, merci de bien vouloir vous connecter à l’aide de votre compte CAS Bordeaux INP par EirbConnect
                 </p>
-                <EirbConnect class="mt-3" />
+                <EirbConnect class="mt-3" @click="login()" />
             </div>
             <img class="sm:flex hidden" src="/undraw/undraw_authentication_re_svpt 2.svg" alt="authentification_draw">
         </div>
@@ -14,4 +14,11 @@
 </template>
 
 <script setup lang="ts">
+
+const config = useRuntimeConfig();
+
+const login = () => {
+    window.location.href = `${config.public.EIRB_AUTH_URL}/login?eirb_service_url=${config.public.BASE_URL}/api/login`;
+}
+
 </script>

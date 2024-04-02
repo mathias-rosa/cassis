@@ -1,10 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      BASE_URL: process.env.BASE_URL,
+      EIRB_AUTH_URL: process.env.EIRB_AUTH_URL,
+    }
+  },
   modules: [
     "nuxt-mongoose",
     '@nuxtjs/google-fonts',
     'nuxt-feather-icons',
+    '@vueuse/nuxt',
   ],
   mongoose: {
     uri: process.env.MONGODB_URI,
