@@ -21,4 +21,10 @@
 
 <script setup lang="ts">
 const authStore = useAuthStore()
+
+onMounted(() => {
+  if (authStore.isAuthenticated) {
+    navigateTo('/create')
+  }
+})
 </script>
