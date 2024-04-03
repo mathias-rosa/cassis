@@ -1,4 +1,4 @@
-const shorten = (num : number) => {
+const shorten = (num: number) => {
     const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$_+!*()";
     let result: string = "";
 
@@ -15,7 +15,7 @@ const shorten = (num : number) => {
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
 
-    const formatURL = (url : string) => {
+    const formatURL = (url: string) => {
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
             return "http://" + url
         }
@@ -24,7 +24,6 @@ export default defineEventHandler(async (event) => {
 
     try {
 
-        console.log(formatURL(body.url))
 
 
         body.url = formatURL(body.url.toLowerCase())
@@ -38,7 +37,7 @@ export default defineEventHandler(async (event) => {
                 statusMessage: 'Url manquante'
             })
         }
-        
+
         // Si le lien existe déjà, on le retourne
 
         const link = await LinkShema.findOne({
@@ -55,18 +54,18 @@ export default defineEventHandler(async (event) => {
 
         const date = new Date()
         const entry = await new LinkShema({
-            url:  encodeURI(body.url),
+            url: encodeURI(body.url),
             uid: shorten(date.getTime()),
             createdAt: date,
-            createdBy: "mrosa001",
-            visited : 0,
+            createdBy: body.createdBy,
+            visited: 0,
             expiresAt: body.expiresAt ? new Date(body.expiresAt) : null,
         }).save()
 
-        
+
 
         return {
-            status : "success",
+            status: "success",
             uid: entry.uid
         }
     }

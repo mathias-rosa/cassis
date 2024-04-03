@@ -12,16 +12,18 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-feather-icons',
     '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   mongoose: {
     uri: process.env.MONGODB_URI,
     options: {},
     modelsDir: 'models',
   },
-  googleFonts:{
-    families : {
-      Unbounded:true,
-      Inter : true
+  googleFonts: {
+    families: {
+      Unbounded: true,
+      Inter: true
     }
   },
   css: ['~/assets/css/main.css'],
