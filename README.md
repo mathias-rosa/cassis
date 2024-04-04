@@ -23,6 +23,9 @@ Database: MongoDB
 
 - Node.js
 - MongoDB
+- [Service EirbAuth / Roulade (pour l'authentification)](https://github.com/Eirbware/roulade.eirb.fr)
+
+> Il est recommandé d'utiliser l'image docker de roulade pour simplifier l'installation.
 
 ### Créer une base de données MongoDB
 
