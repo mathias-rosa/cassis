@@ -29,12 +29,15 @@
       <input
         id="link"
         @keyup.enter="createLink()"
-        class="w-full rounded-md bg-secondary/20 p-3 text-foreground outline-none"
+        class="w-full rounded-md bg-secondary/20 p-3 text-foreground outline-none transition-all duration-200 ease-in-out focus:ring-2 focus:ring-primary focus:ring-opacity-50"
         type="text"
         placeholder="https://wei.eirb.fr"
         v-model="link.url"
       />
-      <button @click="createLink()" class="rounded-md bg-primary px-3 text-background">
+      <button
+        @click="createLink()"
+        class="rounded-md bg-primary px-3 text-background transition-all duration-200 ease-in-out hover:bg-accent"
+      >
         Générer
       </button>
     </div>
@@ -60,7 +63,8 @@ async function createLink() {
   if (!link.value.url) return
   const ret = $fetch('/api/new', {
     method: 'POST',
-    body: JSON.stringify(link.value)
+    body: JSON.stringify(link.value),
+    query: { token: authStore.token }
   })
 
   ret.then((): unknown => navigateTo('/links'))

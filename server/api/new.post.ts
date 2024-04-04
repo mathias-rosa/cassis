@@ -13,7 +13,22 @@ const shorten = (num: number) => {
 }
 
 export default defineEventHandler(async (event) => {
+    const token = getQuery(event).token
+
+    const user = await verifyToken(token as string)
+
+    if (!user.user || !token) {
+        return {
+            statusCode: 401,
+            body: {
+                message: 'Unauthorized'
+            }
+        }
+
+    }
+
     const body = await readBody(event)
+
 
     const formatURL = (url: string) => {
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
@@ -23,8 +38,6 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-
-
 
         body.url = formatURL(body.url.toLowerCase())
 
