@@ -1,75 +1,59 @@
-# Nuxt 3 Minimal Starter
+# Cassis
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Description
 
-## Setup
+CASSIS permet de protéger une ressource derrière une url racourcie qui peut être déchiffrée par un utilisateur possédant les droits sur le lien. Ces ressources peuvent être des url ou du texte (bientot) 
+Pour créer ces ressources, une interface graphique et une api sont proposées. Cette interface graphique permet aussi de visualiser les ressources proposées ainsi que quelques statistiques comme le nombre de visites.
 
-Make sure to install the dependencies:
+## Table des matières
+
+- Technologies
+- Installation
+- Docker
+- Utilisation
+
+## Technologies
+
+Framework: Nuxt
+Database: MongoDB
+
+## Installation
+
+### Prérequis
+
+- Node.js
+- MongoDB
+
+### Créer une base de données MongoDB
+
+> Peut être fait en local ou sur un service cloud comme MongoDB Atlas
+> Il est pratique d'utiliser un client comme MongoDB Compass pour visualiser les données
+
+### Configuration
+
+Copier le fichier `.env.example` en `.env` et remplir les variables d'environnement
 
 ```bash
-# npm
+cp .env.example .env
+```
+
+### Installer les dépendances
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Démarrer le serveur de développement
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Docker
 
-Build the application for production:
+> Comming soon
 
-```bash
-# npm
-npm run build
+## Utilisation
 
-# pnpm
-pnpm run build
+> Comming soon
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
