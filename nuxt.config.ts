@@ -4,21 +4,21 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       BASE_URL: process.env.BASE_URL,
-      EIRB_AUTH_URL: process.env.EIRB_AUTH_URL,
+      EIRB_AUTH_URL: process.env.EIRB_AUTH_URL
     }
   },
   modules: [
-    "nuxt-mongoose",
+    'nuxt-mongoose',
     '@nuxtjs/google-fonts',
     'nuxt-feather-icons',
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
+    '@pinia-plugin-persistedstate/nuxt'
   ],
   mongoose: {
     uri: process.env.MONGODB_URI,
     options: {},
-    modelsDir: 'models',
+    modelsDir: 'models'
   },
   googleFonts: {
     families: {
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
+      autoprefixer: {}
+    }
+  }
 })

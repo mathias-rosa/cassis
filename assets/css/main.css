@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-h1, h2 {
-    font-family: 'Unbounded', sans-serif;
+h1,
+h2 {
+  font-family: 'Unbounded', sans-serif;
 }
 
-*{
-    font-family: 'Inter', sans-serif;
+* {
+  font-family: 'Inter', sans-serif;
 }
