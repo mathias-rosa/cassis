@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "format": "prettier  --log-level warn --write ."
+    "format": "prettier  --log-level warn --write .",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
