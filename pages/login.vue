@@ -24,7 +24,6 @@ const login = async (token: string) => {
 }
 
 if (token) {
-  console.log(token)
   login(token as string)
 }
 </script>

@@ -6,12 +6,7 @@ export default defineEventHandler(async (event) => {
   )
 
   if (!tokenVerified) {
-    return {
-      statusCode: 401,
-      body: {
-        message: 'Unauthorized'
-      }
-    }
+    throw new Error('Unauthorized')
   }
 
   const user = getRouterParam(event, 'user')
@@ -28,10 +23,14 @@ export default defineEventHandler(async (event) => {
     }
   )
 
-  return links.map((link) => ({
-    uid: link.uid,
-    url: link.url,
-    createdAt: link.createdAt,
-    visited: link.visited
-  }))
+  return {
+    statusCode: 200,
+    body:
+      links.map((link) => ({
+        uid: link.uid,
+        url: link.url,
+        createdAt: link.createdAt,
+        visited: link.visited
+      }))
+  }
 })
