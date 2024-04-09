@@ -54,7 +54,28 @@ npm run dev
 
 ## Docker
 
-> Comming soon
+### Variables d'environnement
+
+Docker utilise des variables d'environnement un peu différentes de celles utilisées en local.
+Pour deployer avec docker on peut remplacer les variables d'environnement dans le fichier `.env` par des variables d'environnement docker et eventuellement les adapter.
+
+```bash
+cp .env.docker .env
+```
+
+### Démarrer le serveur
+On peut ensuite lancer le serveur avec docker compose.
+
+```bash
+docker compose up --detach
+```
+
+### Arrêter le serveur
+
+```bash
+docker compose down
+```
+
 
 ## Utilisation
 
