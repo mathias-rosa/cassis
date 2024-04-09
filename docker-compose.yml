@@ -1,35 +1,21 @@
-version: '3'
+version: '3.4'
 services:
   cassis:
     build: .
     container_name: nuxt-cassis
     restart: unless-stopped
+    depends_on:
+      - mongodb
     ports:
       - '3000:3000'
-    networks:
-      - mongodb
-    environment:
-      - MONGODB_URI = "mongodb://cassisdb_root:d100a8440f9f1cbe117eabc92e23322e9a0b52073a3b22b1c9944f8570d892ba4@mongodb:27017/cassis"
+
   mongodb:
-    image: mongo
-    container_name: mongo-cassis
+    image: mongo:latest
+    container_name: nuxt-mongo
     ports:
       - '27017:27017'
-    command: mongod --auth
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: 'cassisdb_root'
-      MONGO_INITDB_ROOT_PASSWORD: 'd100a8440f9f1cbe117eabc92e23322e9a0b52073a3b22b1c9944f8570d892ba4'
-      MONGO_INITDB_DATABASE: cassis
-      MONGODB_DATA_DIR: /data/db
-      MONDODB_LOG_DIR: /dev/null
-    networks:
-      - mongodb
-    expose:
+    volumes:
       - mongodbdata:/data/db
-
-networks:
-  mongodb:
-    driver: bridge
 
 volumes:
   mongodbdata:

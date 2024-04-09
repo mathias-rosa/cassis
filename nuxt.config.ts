@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       BASE_URL: process.env.BASE_URL,
-      EIRB_AUTH_URL: process.env.EIRB_AUTH_URL
+      EIRB_AUTH_URL: process.env.EIRB_AUTH_URL,
     }
   },
   modules: [
